@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:test_flutter/provider/auth_provider.dart';
 import 'package:test_flutter/screen/login_screen.dart';
 import 'package:test_flutter/utils/theme.dart';
 
@@ -24,6 +26,7 @@ class _ResgisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
+    AuthProvider auth = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -34,14 +37,13 @@ class _ResgisterScreenState extends State<RegisterScreen> {
               children: [
                 Center(
                   child: Container(
-                    width: 280,
-                    height: 170,
+                    width: 250,
+                    height: 140,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(18),
                       image: const DecorationImage(
-                        fit: BoxFit.cover,
                         image: AssetImage(
-                          'assets/logo2.png',
+                          'assets/logo.png',
                         ),
                       ),
                     ),
@@ -136,11 +138,11 @@ class _ResgisterScreenState extends State<RegisterScreen> {
                                 _formKey.currentState!.validate();
 
                             if (isValidForm) {
-                              // auth.signUp(
-                              //   emailController.text,
-                              //   passwordController.text,
-                              //   context,
-                              // );
+                              auth.signUp(
+                                emailController.text,
+                                passwordController.text,
+                                context,
+                              );
                               emailController.clear();
                               passwordController.clear();
                             }

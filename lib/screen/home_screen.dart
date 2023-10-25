@@ -8,6 +8,7 @@ import 'package:test_flutter/screen/rest_api_screen.dart';
 
 import 'package:test_flutter/utils/theme.dart';
 
+import '../provider/auth_provider.dart';
 import '../provider/login_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final imagePickerService = Provider.of<ImagePickerService>(context);
     LoginProvider auth = Provider.of<LoginProvider>(context, listen: false);
+    AuthProvider authh = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -32,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(
               onPressed: () {
                 auth.logoutGoogle();
+                authh.logOut(context);
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.red,
