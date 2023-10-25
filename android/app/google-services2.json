@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "279441062246",
+    "project_id": "mobile-test-f2ec2",
+    "storage_bucket": "mobile-test-f2ec2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279441062246:android:b74bb926e6e196afd6f0a7",
+        "android_client_info": {
+          "package_name": "com.example.test_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMGRlNOnZnpjz_SW3HzT38gZ5h7MIqlgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
